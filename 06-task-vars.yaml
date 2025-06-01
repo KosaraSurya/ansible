@@ -1,0 +1,11 @@
+- name: Task level variable
+  hosts: local
+  connection: local
+  tasks:
+  - name: Using task level variable
+    vars:
+    city: Vizianagaram
+    State: Andhra Pradesh
+    country: Bharat
+    ansible.builtin.debug:
+      msg: "Hello Team, I am from {{city}} district in the state of {{state}} and i love my {{Bharat}}"
