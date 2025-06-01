@@ -3,7 +3,7 @@
   connection: local
   vars_files:
   - variable.yaml
-  taks:
+  tasks:
   - name: getting variables from file
     ansible.builtin.debug:
       msg: hello i am surya with id {{id}} from dept {{branch}} in {{college}} college.
