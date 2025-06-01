@@ -14,7 +14,7 @@
       CI : jekins
       scripting: "shell, ansible, terrafom"
   tasks:
-  - name: Datatypes: lists and objects
+  - name: Datatypes lists and objects
     ansible.builtin.debug:
       msg: "Course is: {{ COURSE }}, Duration: {{ DURATION }}, is live?: {{ IS_LIVE }}, Tools are: {{ TOOLS }}, Concepts are: {{ CONCETPS }}"
 
