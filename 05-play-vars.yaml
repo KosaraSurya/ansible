@@ -1,0 +1,12 @@
+- name: displaying play level variables
+  hosts: local
+  connection: local
+  vars:
+    course: DevOps
+    Duration: 110 hrs
+    Trainer: Shiva Reddy
+  tasks:
+  - name: displaying msg byusing play level variable
+    ansible.builtin.debug:
+      msg: "Hello Team I am learning{{course}} with the {{Duration}} under the guidence on my {{Trainer}}"
+  
