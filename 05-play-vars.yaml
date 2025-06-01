@@ -8,7 +8,7 @@
   tasks:
   - name: displaying msg byusing play level variable
     ansible.builtin.debug:
-      msg: "Hello Team I am learning {{course}} with the {{Duration}} under the guidence on my Trainer{{Trainer}}"
+      msg: "Hello Team I am learning {{course}} with the {{Duration}} Duration. under the guidence on my Trainer{{Trainer}}"
 
       #Here we use {{}} to use reference of variables.
   
