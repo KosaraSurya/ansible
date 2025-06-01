@@ -1,5 +1,6 @@
 - name: installaiton of ngnix
   hosts: local
+  become: yes # sudo access
   connection: local #Only for local host only we have to mention connection also
   tasks:
   - name: installing ngnix
