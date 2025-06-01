@@ -11,4 +11,5 @@
       msg: "Hello Team I am learning {{course}} with the {{Duration}} Duration. under the guidence on my Trainer {{Trainer}}"
 
       #Here we use {{}} to use reference of variables.
+      #vars refernce should be surrounded by ""
   

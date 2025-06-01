@@ -4,7 +4,7 @@
   tasks:
   - name: Using task level variable
     vars:
-    city: Vizianagaram
+      city: Vizianagaram
     State: Andhra Pradesh
     country: Bharat
     ansible.builtin.debug:
