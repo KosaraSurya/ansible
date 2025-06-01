@@ -1,7 +1,7 @@
 - name: Using variables from file
   hosts: local
   connection: local
-  vars:
+  vars_files:
   - variable.yaml
   taks:
   - name: getting variables from file
