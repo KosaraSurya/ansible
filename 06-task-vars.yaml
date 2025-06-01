@@ -8,4 +8,4 @@
       State: Andhra Pradesh
       country: Bharat
     ansible.builtin.debug:
-      msg: "Hello Team, I am from {{city}} district in the state of {{state}} and i love my {{country}}"
+      msg: "Hello Team, I am from {{city}} district in the state of {{State}} and i love my {{country}}"
