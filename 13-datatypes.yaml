@@ -3,10 +3,10 @@
   connection: local
   vars:
     COURSE: aws devsecops
-    DURATION: 11hrs
-    TRAINER: surya Prakash
-    IS_ALIVE: true
-    Tools:
+    DURATION: 11 # This is number
+    TRAINER: "surya Prakash" # String
+    IS_LIVE: true # boolean
+    Tools: # List []
     - linux
     - shell
     - ansible
