@@ -1,5 +1,7 @@
 - name: Ping server
   hosts: frontend
-  task: # list of tasks
+  tasks: # list of tasks
   - name: checking connectivity
     ansible.builtin.ping:
+
+
