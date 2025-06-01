@@ -6,7 +6,7 @@
     DURATION: 11 # This is number
     TRAINER: "surya Prakash" # String
     IS_LIVE: true # boolean
-    Tools: # List []
+    TOOLS: # List []
     - linux
     - shell
     - ansible
