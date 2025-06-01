@@ -1,0 +1,25 @@
+- name: play1
+  hosts: local
+  connection: local
+  tasks: 
+  - name: Printing P1T1 #plaly1 -p1, task1 -t1
+    ansible.builtin.debug:
+      msg: "P1T1:Hi surya"
+  
+  - name:  Printing P1T2 
+    ansible.builtin.debug:
+      msg: "P1T2: Prakash"
+    
+
+- name: play2
+  hosts: local
+  connection: local
+  taks:
+  - name: again printing
+    ansible.builtin.debug:
+      msg: "P2T1: work hard"
+
+  - name: again printing
+    ansible.builtin.debug:
+      msg: "P2T2 : along with smartness"
+
