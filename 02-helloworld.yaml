@@ -1,0 +1,7 @@
+- nmae: printing hello world
+  hosts: local
+  connection: local # no need of username and password
+  tasks:
+  - name: Printing hellow world
+    ansible.builtin.debug:
+      msg: "Hellow world"
