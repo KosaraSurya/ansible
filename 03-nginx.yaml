@@ -4,11 +4,11 @@
   tasks:
   - name: installing ngnix
     ansible.builtin.package:
-    name: ngnix
-    state: present
+      name: ngnix
+      state: present
   
   - name: starting nginx
     ansible.builtin.service:
-    name: nginx
-    state: started  #similar to systemctl start nginx
-    enabled: yes  #similar to systemctl enable nginx
+      name: nginx
+      state: started  #similar to systemctl start nginx
+      enabled: yes  #similar to systemctl enable nginx
