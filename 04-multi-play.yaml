@@ -14,7 +14,7 @@
 - name: play2
   hosts: local
   connection: local
-  taks:
+  tasks:
   - name: again printing
     ansible.builtin.debug:
       msg: "P2T1: work hard"
