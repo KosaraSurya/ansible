@@ -1,5 +1,5 @@
 - name: Ping server
-  host: forntend
+  hosts: forntend
   task:
     -name: checking connectivity
     ansible.builtin.ping:
