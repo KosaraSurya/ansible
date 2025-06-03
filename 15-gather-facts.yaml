@@ -1,6 +1,6 @@
 - name: gatherig facts
   hosts:  local
-  coonnection:  local
+  connection:  local
   tasks:
   - name: print facts
     ansible.builtin.debug:
