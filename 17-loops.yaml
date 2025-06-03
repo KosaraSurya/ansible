@@ -1,0 +1,14 @@
+- name: loops
+  hosts:  local
+  connection: local
+  become: yes
+  tasks:
+  - name: printing name using loops
+    ansible.builtin.debug:
+      msg: printing {{  items }} #item here is reserved keyword to display data using loops
+    loops:
+    - srinivas
+    - laxmi
+    - surya
+    - Prakash
+    - ravi
