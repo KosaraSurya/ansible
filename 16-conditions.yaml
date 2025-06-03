@@ -1,7 +1,6 @@
 - name: playbook controlling usinf ansible_facts
-  hosts:  local
-  connection: local
-  become: yes
+  hosts:  frontend
+  become: yes #to get sudo acces (or) while running in linux we can give -b to become root user
   tasks:
   - name: install nginx if os_family is redhat
     ansible.builtin.dnf:
