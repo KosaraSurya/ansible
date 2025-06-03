@@ -6,5 +6,5 @@
   tasks:
   - name: display the number based on condition
     ansibile.builtin.debug:
-      msg: "The given number {{Number}} is lessthan 11"
+      msg: "The given number {{Number}} is lessthan 100"
     when: Number < 100
