@@ -4,7 +4,12 @@
   vars: 
     Number: 10
   tasks:
-  - name: display the number based on condition
+  - name: The number is less than 100
     ansible.builtin.debug:
       msg: "The given number {{Number}} is lessthan 100"
     when: Number < 100
+
+  - name: the number is greater than 100
+    ansible.builtin.debug:
+      msg: "The given number {{Number}} is greaterthan 100"
+    when: Number > 100
