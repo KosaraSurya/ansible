@@ -5,11 +5,11 @@
   - name: install nginx if os_family is redhat
     ansible.builtin.dnf:
       name: nginx
-      state: presented
+      state: present
     when: ansible_os_family == "RedHat"
 
   - name: install nginx id os_family is debian
     ansible.builtin.apt:
       name: nginx
-      state:  presented
+      state:  present
     when: ansible_os_family == "Debian"
