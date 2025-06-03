@@ -1,0 +1,10 @@
+- name: conditons
+  hosts: local
+  connection: local
+  vars: 
+    Number: 10
+  tasks:
+  - name: display the number based on condition
+    ansibile.builtin.debug:
+      msg: "The given number {{Number}} is lessthan 11"
+    when: Number < 100
