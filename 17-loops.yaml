@@ -6,7 +6,7 @@
   - name: printing name using loops
     ansible.builtin.debug:
       msg: printing {{  items }} #item here is reserved keyword to display data using loops
-    loops:
+    loop:
     - srinivas
     - laxmi
     - surya
