@@ -1,6 +1,7 @@
 - name: playbook controlling usinf ansible_facts
   hosts:  local
   connection: local
+  become: yes
   tasks:
   - name: install nginx if os_family is redhat
     ansible.builtin.dnf:
