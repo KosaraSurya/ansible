@@ -5,9 +5,10 @@
   - name: check roboshop user exist or not
     ansible.builtin.command: id roboshop
     register: output
-    ignore_error: true
+    ignore_errors: true
 
   - name: crating user
+    become: yes
     ansible.builtin.command: useradd roboshop
     when: output | rc != 0 # if result code is 0, it means it is success
 
