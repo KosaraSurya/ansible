@@ -10,7 +10,7 @@
   - name: crating user
     become: yes
     ansible.builtin.command: useradd roboshop
-    when: output |int rc != 0 # if result code is 0, it means it is success
+    when: output.rc != 0 # if result code is 0, it means it is success
 
   - name : user already exists
     ansible.builtin.debug:
