@@ -6,13 +6,17 @@
     - backend
     - frontend
     - mysql
+    vpc_subnet_id: subnet-0dca251af3da50fcf
+    image_id: ami-09c813fb71547fc4f
+    security_group: sg-0e357cdf3695bf2f9
+    zone: Z0748101MT6SJ25GGSYP
   tasks:
   - name: Create EC2 instance with termination protection turned on
     amazon.aws.ec2_instance:
       name: "{{ item }}"
-      vpc_subnet_id: subnet-0dca251af3da50fcf
-      image_id: ami-09c813fb71547fc4f
-      security_group: sg-0e357cdf3695bf2f9
+      subnet_id: "{{ vpc_subnet_id }}"
+      ami_id: "{{ image_id }}"
+      sg_id: "{{ security_group }}"
       tags:
         Name: "{{ item }}"
     loop: "{{ instances }}"
@@ -21,3 +25,15 @@
   - name: printing ec2 ec2_output
     ansible.builtin.debug:
       msg: "{{ ec2_output }}"
+
+  - name: creating R53 records
+    amazon.aws.route53:
+      state: prsent
+      zon_id: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ items.instances[0].private_ip_address }}"
+      wait: true
+      loop: "{{ ec2_output }}"
+    
