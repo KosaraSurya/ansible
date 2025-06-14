@@ -1,5 +1,6 @@
 - name: configuration with dynamic inventory
   hosts: dynamic_frontend #name taken from inventory.aws_ec2.yaml
+  serial: 5 # if we mention serial as five, it will done the task in 5 servers then next 5 servers
   become: yes
   tasks:
   - name: installing nginx
@@ -10,5 +11,8 @@
   - name: running nginx
     ansible.builtin.service:
       name: nginx
-      state: startd
+      state: started
       enabled: yes
+
+
+# TO install nginx to dynamic IPS, ansible should run parallely
