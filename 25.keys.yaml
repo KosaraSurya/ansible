@@ -1,0 +1,18 @@
+- name: ping the server
+  hosts: keys
+  become: yes
+  tasks:
+  - name: install nginx
+    ansible.builtin.dnf:
+      name: nginx
+      state: installed
+
+  - name: run nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+
+#In ansible server crate dirctoryy to save the keys, in aws configure the rsa key to the server while crating and then,
+#In ansible server go the path where the key is present ssh -i daws-84s.pem ec2-user@34.204.10.188
+#Here daws-84s.pem --> Key name, 34.204.10.188 --> public Ip of the server which we are trying to connect
