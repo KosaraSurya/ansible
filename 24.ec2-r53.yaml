@@ -1,0 +1,19 @@
+- name: creating ec2 instance and route 53 records
+  hosts: local
+  connection: local
+  vars:
+    instances:
+      backend
+      frontend
+      mysql
+  tasks:
+  - name: Create EC2 instance with termination protection turned on
+    amazon.aws.ec2_instance:
+      name: "{{ item }}"
+      vpc_subnet_id: subnet-0dca251af3da50fcf
+      image_id: ami-09c813fb71547fc4f
+      security_group: sg-0e357cdf3695bf2f9
+      tags:
+        Name: "{{ item }}"
+    loop:
+    - "{{ instances }}"
