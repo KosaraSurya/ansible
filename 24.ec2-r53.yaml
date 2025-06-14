@@ -29,7 +29,7 @@
 
   - name: creating R53 records
     amazon.aws.route53:
-      state: prsent
+      state: present
       zone: "{{ zone }}"
       record: "{{ item.item }}.{{ zone }}"
       type: A
@@ -41,7 +41,7 @@
 
   - name: creating R53 records
     amazon.aws.route53:
-      state: prsent
+      state: present
       zone: "{{ zone }}"
       record: "{{ zone }}"
       type: A
