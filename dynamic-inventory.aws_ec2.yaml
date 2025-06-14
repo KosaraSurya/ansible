@@ -1,0 +1,20 @@
+plugin: amazon.aws.aws_ec2
+#if you use plugins of particular application that measn we can use those application services
+#Here aws credentila(AWS CLI) should be commented if we are given these credentials setup in ansible server.
+# # The access key for your AWS account. 
+# aws_access_key: <YOUR-AWS-ACCESS-KEY-HERE>
+# # The secret access key for your AWS account.
+# aws_secret_key: <YOUR-AWS-SECRET-KEY-HERE>
+regions:
+- us-east-1
+filters:
+  # This selects only running instances with tag `Name`.
+  tag:Name: frontend
+  instance-state-name : running
+hostnames:
+   # You can also specify a list in order of precedence for hostname variables.
+  - private-ip-address
+
+compose:
+  # This sets the ansible_host variable to connect with the private IP address without changing the hostname.
+  ansible_host: private_ip_address
