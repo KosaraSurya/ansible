@@ -9,7 +9,7 @@
     vpc_subnet_id: subnet-0dca251af3da50fcf
     ami_id: ami-09c813fb71547fc4f
     sg_id: sg-0e357cdf3695bf2f9
-    route53_zone_id #: Z0748101MT6SJ25GGSYP
+    route53_zone_id: devsecopstrainee.site
   tasks:
   - name: Create EC2 instance with termination protection turned on
     amazon.aws.ec2_instance:
