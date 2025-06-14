@@ -15,5 +15,4 @@
       security_group: sg-0e357cdf3695bf2f9
       tags:
         Name: "{{ item }}"
-    loop:
-    - "{{ instances }}"
+    loop: "{{ instances }}"
