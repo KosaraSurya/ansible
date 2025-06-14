@@ -3,9 +3,9 @@
   connection: local
   vars:
     instances:
-      backend
-      frontend
-      mysql
+    - backend
+    - frontend
+    - mysql
   tasks:
   - name: Create EC2 instance with termination protection turned on
     amazon.aws.ec2_instance:
