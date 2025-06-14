@@ -1,0 +1,14 @@
+- name: configuration with dynamic inventory
+  hosts: dynamic_frontend #name taken from inventory.aws_ec2.yaml
+  become: yes
+  tasks:
+  - name: installing nginx
+    ansible.builtin.dnf:
+      name: nginx
+      state: installed
+    
+  - name: running nginx
+    ansible.builtin.service:
+      name: nginx
+      state: startd
+      enabled: yes
