@@ -9,7 +9,7 @@
     vpc_subnet_id: subnet-0dca251af3da50fcf
     ami_id: ami-09c813fb71547fc4f
     sg_id: sg-0e357cdf3695bf2f9
-    zone: Z0748101MT6SJ25GGSYP
+    route53_zone_id: Z0748101MT6SJ25GGSYP
   tasks:
   - name: Create EC2 instance with termination protection turned on
     amazon.aws.ec2_instance:
@@ -30,7 +30,7 @@
   - name: creating R53 records
     amazon.aws.route53:
       state: present
-      zone: "{{ zone }}"
+      zone: "{{ route53_zone_id }}"
       record: "{{ item.item }}.{{ zone }}"
       type: A
       ttl: 1
@@ -42,7 +42,7 @@
   - name: creating R53 records
     amazon.aws.route53:
       state: present
-      zone: "{{ zone }}"
+      zone: "{{ route53_zone_id }}"
       record: "{{ zone }}"
       type: A
       ttl: 1
