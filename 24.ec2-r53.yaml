@@ -9,7 +9,7 @@
     vpc_subnet_id: subnet-0dca251af3da50fcf
     ami_id: ami-09c813fb71547fc4f
     sg_id: sg-0e357cdf3695bf2f9
-    route53_zone_id: devsecopstrainee.site
+    zone: devsecopstrainee.site
   tasks:
   - name: Create EC2 instance with termination protection turned on
     amazon.aws.ec2_instance:
@@ -27,28 +27,28 @@
     ansible.builtin.debug:
       msg: "{{ ec2_output }}"
 
-  - name: creating R53 records
+  - name: create r53 records
     amazon.aws.route53:
       state: present
-      zone: "{{ route53_zone_id }}"
+      zone: "{{ zone }}"
       record: "{{ item.item }}.{{ zone }}"
       type: A
       ttl: 1
       value: "{{ item.instances[0].private_ip_address }}"
       wait: true
       overwrite: true
-    loop: "{{ ec2_output.results }}"
+    loop: "{{ ec2_output.results }} "
 
-  - name: creating R53 records
+  - name: create r53 records
     amazon.aws.route53:
       state: present
-      zone: "{{ route53_zone_id }}"
+      zone: "{{ zone }}"
       record: "{{ zone }}"
       type: A
       ttl: 1
       value: "{{ item.instances[0].public_ip_address }}"
       wait: true
       overwrite: true
-    loop: "{{ ec2_output.results }}"
-    when: item.item=="frontend"
+    loop: "{{ ec2_output.results }} "
+    when: item.item == "frontend"
     
