@@ -7,6 +7,11 @@ plugin: amazon.aws.aws_ec2
 # aws_secret_key: <YOUR-AWS-SECRET-KEY-HERE>
 regions:
 - us-east-1
+keyed_groups:
+# This creates host groups based on architecture.
+- key: tags.Name #dynamic-frontend
+  prefix: "dynamic"
+  separator: "-"
 filters:
   # This selects only running instances with tag `Name`.
   tag:Name: frontend
